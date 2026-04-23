@@ -1,5 +1,5 @@
 // main.go
-package traefik_backend_selector
+package main
 
 import (
     "context"

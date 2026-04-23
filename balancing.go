@@ -1,5 +1,5 @@
 // balancing.go
-package traefik_backend_selector
+package main
 
 import (
     "crypto/sha256"
