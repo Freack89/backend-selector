@@ -1,0 +1,23 @@
+# .traefik.yml
+displayName: Backend Selector
+type: middleware
+import: github.com/vseregin89/traefik-backend-selector
+summary: "Dynamic backend selector with passive healthcheck and multiple balancing strategies"
+
+testData:
+  backends:
+    - url: "foo"
+      weight: 50
+    - url: "boo3"
+      weight: 50
+  strategy: "hrw"
+  hashKey: "client_ip"
+  header: "X-Backend-Url"
+  passiveHealthCheck:
+    enabled: true
+    maxFailures: 5
+    failureCodes: [500, 502, 503, 504]
+    timeout: "30s"
+    retryTimeout: "60s"
+    halfOpenMaxReqs: 3
+
