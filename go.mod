@@ -1,4 +1,4 @@
-module github.com/yourorg/traefik-backend-selector
+module github.com/Freack89/backend-selector
 
 go 1.21
 
